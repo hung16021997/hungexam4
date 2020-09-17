@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>DELETE</title>
+
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8" style="margin: 0 auto;">
+            <h3 style="text-align: center;color: orange">DELETE CITY</h3>
+            <br>
+
+            <form th:action="@{/delete-city}" method="post" th:object="${city}">
+                <input type="hidden" th:field="*{id}">
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input type="text" class="form-control" th:value="${city.name}" readonly style="width: 60%">
+                </div>
+
+<!--                <div class="form-group">-->
+<!--                    <label>Country:</label>-->
+<!--                    <input type="text" class="form-control" th:value="${city.country.name}">-->
+<!--                </div>-->
+
+
+<!--                <div class="form-group">-->
+<!--                    <label>Area (km2):</label>-->
+<!--                    <input type="text" class="form-control" th:value="${city.area}">-->
+<!--                </div>-->
+
+
+
+<!--                <div class="form-group">-->
+<!--                    <label>Population (millions of people):</label>-->
+<!--                    <input type="text" class="form-control" th:value="${city.population}">-->
+<!--                </div>-->
+
+
+<!--                <div class="form-group">-->
+<!--                    <label>Gdp (millions of USD):</label>-->
+<!--                    <input type="text" class="form-control" th:value="${city.gdp}">-->
+<!--                </div>-->
+
+
+<!--                <div class="form-group">-->
+<!--                    <label>Description:</label>-->
+<!--                    <input type="text" class="form-control" th:value="${city.description}">-->
+<!--                </div>-->
+
+                <hr>
+                <h3 style="color: red">Delete this city, are you sure???</h3>
+                <br>
+                <button type="submit" class="btn btn-primary mb-2">Delete</button>
+                <a class="btn btn-info mb-2" th:href="@{/cities}">Back to list</a>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
